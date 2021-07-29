@@ -1,0 +1,13 @@
+<div class="layout-column align-items-center mt-50">
+  <section class="layout-row align-items-center justify-content-center">
+    <input type="text" class="large" placeholder="Enter veg eg carrot" name="inptVegFilter" data-test-id="app-input"
+     (ngModelChange)="filterVegetables(inptVegFilter.value)"
+     ngModel #inptVegFilter="ngModel" />
+  </section>
+  ​
+  <ul class="mt-50 slide-up-fade-in styled" data-test-id="filtered-vegetables" *ngIf="filteredItems.length>0">
+    <li class="py-10" *ngFor="let vegitable of filteredItems">{{vegitable}}</li>
+  </ul>
+
+  <div class="mt-50 slide-up-fade-in" data-test-id="no-result" *ngIf="filteredItems.length===0">No Results Found</div>
+</div>
